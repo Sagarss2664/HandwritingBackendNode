@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "booming-mission-468413-j3",
+  "private_key_id": "12b7c7a2e1a2747117b5664f9764471194bfca60",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCOnGcdiWGPMWnP\nf07sXzZwBQhIAmD3mz3b0v4RLzGgmvDVP6I/89LEovvLZS7UPpRb1NHnEsIEO9Dp\n9jFy0toFa0ygjNWqsVui5Q+8UgCE6X7lXyohlTYnHZLGrJtmxqHTFbv5vXBg9WN8\nHW/tco94acR/2dn190eTvg9w+7ahhNu9c6sZdjR/rGhIMvTMfm2ux8wxdU/aM7se\nvcg46mlfoCeqHBCT4ZxVgCo+22HL6xQmrXNu41IvN/zNChTkGLb04x3OtlHr8Sdt\neP0iS8sUiOEw4pMHcW1K3g+8KhFt/lTpotzCbVuV4JM3THwUtpC4CKlxFrWmX3FN\nwa3oZt6fAgMBAAECggEAPq0oeIe/c9JwwXwfMK1r3HGpwRQij9APsMQbW2wVcJOI\nEwDjix3a3QcQiMTQfwF97JotIlRRJtEvMRQ9iUx3+3e79rfO1DUcpAvuDYMwrTl9\nxss7VgUhBrHtpxmHNvVHe+EKe2kxsbtHXO4HGiGGQpKhhNs2+u4R7DHU0YAfNP7q\nE2lTiHtQCpfPPV63CuaXovKaDGi5nxKlzadAs8zBYjNuS49nTE4/6KaztuhujQRT\nMUW1XxVPEi/XO1Hr+BdrS7jLSmWatd7OD76lKMGeDVVuTuqOfUisFGbVCKokA2Nb\n19kom6Iz+EMaz/1SJhOg8PGer3dsjGaGzPD+43ahsQKBgQDFwHeZbvsQUlBi+DXW\ngWtVw5wymym78xOyBuq+3qWUC/g8mBIqU/M+fQzQxORG8L8uTSjLhGCZgiaQZG1J\nHpG13TXY7y5oAyMj5Tdm3ifIQuuwD7MY74E2Zr63KF+2yLGi+KyO1S8UJ0/bvjqZ\nh+mGQAygkg5NKFxzETZ1GhinWQKBgQC4ngWmleFNxhCbnX3/v63T/fUUyrx47f4+\nnRuV9/bEyWM1urwhiPewKq0099gbxsiZg7k7PGOu6aPriCC58TVPwjNTeXHYDJwZ\nf5fRoBRqEhnN6QPFbea6TIn9Ii7V2tZeGWlGaMvpiQq4mdIhYB+FYlZbgHkLkfSj\nI71FgvdutwKBgFsPL4OFqTJw1Pdd2Fy4J5bMhkZ/UI5tdipKKRpPJ+uuP1aXp/W5\nxo6Fwrr3jy5jeYV2nkxo3pqRZfSjafd7jhkyjbMhIDthBnNm/0XtEmCTADiIYi4f\nS16jnTp16u0eKT4kSEFVRWKAX7OOOymrfgsFv0rJNrCs3zVVPcBajfOxAoGBAIkv\nS22lNB1xz4eDOUyg549+x+4iVHjcCLAIWKZQ8vr51xHm58NXnw42OC0C+oBxb0C7\n5BnDXyNrlBYCOqdRONdCrJcbyF/NxvUfnfX0KRdEyg37V4UOjIPlOihyjTD2g5K6\n+UKLvvKTlfbkvoN0hRe9ogQubEQPuiS7+vo7PpfzAoGAQl7pjZDresgc35+Z1MDt\nBI7ulKqW3SPQ+edl3xgIhDlBBpnMIuGRy6/SKgAuCxsshQkrs64IBlDKkhJCACH0\nBkdzyv3VMii9AxGZ/duu1MbUeotNfBHVmTon+P8ZjP6YMqagx/4kFxGsrLyPt1ek\nlKBNDunE+LcumpkYiCSJiTs=\n-----END PRIVATE KEY-----\n",
+  "client_email": "google-api@booming-mission-468413-j3.iam.gserviceaccount.com",
+  "client_id": "103307077087242486912",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/google-api%40booming-mission-468413-j3.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
