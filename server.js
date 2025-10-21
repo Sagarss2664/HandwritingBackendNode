@@ -2142,7 +2142,49 @@ app.post('/api/refresh-token', authenticateToken, async (req, res) => {
     res.status(500).json({ error: 'Failed to refresh token' });
   }
 });
+// Send form to client
+app.post('/api/clients/send-form', authenticateToken, async (req, res) => {
+  try {
+    if (req.user.role !== 'user') {
+      return res.status(403).json({ error: 'User access required' });
+    }
 
+    const { clientId } = req.body;
+    
+    const client = await Client.findOne({ 
+      _id: clientId, 
+      createdBy: req.user.userId 
+    });
+    
+    if (!client) {
+      return res.status(404).json({ error: 'Client not found' });
+    }
+
+    // Send email to client with the form link
+    const emailSubject = 'Please complete your handwriting analysis questionnaire';
+    const emailHtml = `
+      <p>Dear ${client.name},</p>
+      <p>Please complete the following questionnaire as part of your handwriting analysis:</p>
+      <a href="${client.googleFormLink}" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Click here to complete the questionnaire</a>
+      <p><strong>Link:</strong> ${client.googleFormLink}</p>
+      <p>Thank you!</p>
+    `;
+    
+    await sendEmail(client.email, emailSubject, emailHtml);
+    
+    res.json({ 
+      message: 'Form sent successfully to client',
+      client: {
+        id: client._id,
+        name: client.name,
+        email: client.email
+      }
+    });
+  } catch (err) {
+    console.error('Error sending form:', err);
+    res.status(500).json({ error: 'Failed to send form to client' });
+  }
+});
 // //////////////////////////////////////////////////////////////////////////////////////////////
 
 const PORT = process.env.PORT || 5000;
