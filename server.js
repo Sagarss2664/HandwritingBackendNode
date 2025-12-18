@@ -1,3 +1,12 @@
+
+
+// // // //////////////////////////////////////////////////////////////////////////////////////////////
+
+// // const PORT = process.env.PORT || 5000;
+// // app.listen(PORT, () => {
+// //   console.log(`Server running on port ${PORT}`);
+// // });
+
 // const express = require('express');
 // const mongoose = require('mongoose');
 // const bcrypt = require('bcryptjs');
@@ -7,7 +16,7 @@
 // const crypto = require('crypto');
 
 // const app = express();
-//Sample
+
 // // Middleware
 // app.use(express.json());
 // app.use(cors());
@@ -18,20 +27,12 @@
 // .then(() => console.log('MongoDB connected'))
 // .catch(err => console.error('MongoDB connection error:', err));
 
-// // Email configuration
-// // Email configuration
-// // const transporter = nodemailer.createTransport({
-// //   service: 'gmail',
-// //   auth: {
-// //     user: '01fe22bcs259@kletech.ac.in',
-// //     pass: 'swzk lukh byrh xema',
-// //   }
-// // });
+
 // const transporter = nodemailer.createTransport({
 //   service: 'gmail',
 //   auth: {
 //     user: 'grapho.genius@gmail.com',
-//     pass: 'jxwk zaal cxbu jlmr',
+//     pass: 'gnzt pxuk uzyr klzj',
 //   }
 // });
 
@@ -464,94 +465,32 @@
 // const sheets = google.sheets('v4');
 
 // // Initialize auth with service account credentials
+// // const auth = new google.auth.GoogleAuth({
+// //   keyFile: 'googleSheetsAPI.json', // Your downloaded JSON file
+// //   scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+// // });
+
+// // const auth = new google.auth.GoogleAuth({
+// //   keyFile: '/etc/secrets/googleSheetsAPI.json',
+// //   scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+// // });
 // const auth = new google.auth.GoogleAuth({
-//   keyFile: 'googleSheetsAPI.json', // Your downloaded JSON file
+//   credentials: {
+//     type: process.env.GOOGLE_TYPE,
+//     project_id: process.env.GOOGLE_PROJECT_ID,
+//     private_key_id: process.env.GOOGLE_PRIVATE_KEY_ID,
+//     private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+//     client_email: process.env.GOOGLE_CLIENT_EMAIL,
+//     client_id: process.env.GOOGLE_CLIENT_ID,
+//     auth_uri: process.env.GOOGLE_AUTH_URI,
+//     token_uri: process.env.GOOGLE_TOKEN_URI,
+//     auth_provider_x509_cert_url: process.env.GOOGLE_AUTH_PROVIDER_CERT_URL,
+//     client_x509_cert_url: process.env.GOOGLE_CLIENT_CERT_URL,
+//     universe_domain: process.env.GOOGLE_UNIVERSE_DOMAIN
+//   },
 //   scopes: ['https://www.googleapis.com/auth/spreadsheets'],
 // });
 
-// // async function getScoresFromNewSheet(clientEmail) {
-// //   try {
-// //     const authClient = await auth.getClient();
-// //     const spreadsheetId = '1oYSj9bU3b5g-CzSCESbg8RAvuzj0dhXHdODRl_GhSno';
-    
-// //     const spreadsheet = await sheets.spreadsheets.get({
-// //       auth: authClient,
-// //       spreadsheetId,
-// //     });
-
-// //     const sheetNames = spreadsheet.data.sheets.map(s => s.properties.title);
-// //     console.log('Available sheets:', sheetNames);
-
-// //     // Find the correct sheet (case-insensitive match)
-// //     const targetSheet = spreadsheet.data.sheets.find(s => 
-// //       s.properties.title.toLowerCase().includes('form responses 2')
-// //     );
-
-// //     if (!targetSheet) {
-// //       console.error('No matching sheet found');
-// //       return null;
-// //     }
-
-// //     const sheetName = targetSheet.properties.title;
-// //     console.log(`Using sheet: ${sheetName}`);
-
-// //     // Get all data from the sheet
-// //     const response = await sheets.spreadsheets.values.get({
-// //       auth: authClient,
-// //       spreadsheetId,
-// //       range: `${sheetName}!A:Z`, // Adjust range as needed
-// //     });
-
-// //     const rows = response.data.values;
-// //     if (!rows || rows.length === 0) {
-// //       console.log('No data found in sheet');
-// //       return null;
-// //     }
-
-// //     // Log headers for debugging
-// //     console.log('Headers:', rows[0]);
-
-// //     // Find column indexes dynamically based on headers
-// //     const headers = rows[0].map(h => h.toLowerCase());
-// //     const emailColIndex = headers.findIndex(h => h.includes('email'));
-// //     const cumulativeColIndex = headers.findIndex(h => h.includes('cumulative'));
-// //     const comprehensiveColIndex = headers.findIndex(h => h.includes('comprehensive'));
-// //     const investigativeColIndex = headers.findIndex(h => h.includes('investigative'));
-// //     const analyticalColIndex = headers.findIndex(h => h.includes('analytical'));
-
-// //     console.log('Found columns:', {
-// //       email: emailColIndex,
-// //       cumulative: cumulativeColIndex,
-// //       comprehensive: comprehensiveColIndex,
-// //       investigative: investigativeColIndex,
-// //       analytical: analyticalColIndex
-// //     });
-
-// //     // Find the row with matching email
-// //     for (let i = 1; i < rows.length; i++) {
-// //       const row = rows[i];
-// //       if (row[emailColIndex] && 
-// //           row[emailColIndex].toString().trim().toLowerCase() === clientEmail.trim().toLowerCase()) {
-// //         console.log('Found matching row:', row);
-// //         return {
-// //           Cumulative: parseFloat(row[cumulativeColIndex]) || 0,
-// //           Comprehensive: parseFloat(row[comprehensiveColIndex]) || 0,
-// //           Investigative: parseFloat(row[investigativeColIndex]) || 0,
-// //           Analytical: parseFloat(row[analyticalColIndex]) || 0
-// //         };
-// //       }
-// //     }
-
-// //     console.log(`No row found for email: ${clientEmail}`);
-// //     return null;
-// //   } catch (err) {
-// //     console.error('Google Sheets API error:', err);
-// //     if (err.response) {
-// //       console.error('API response error:', err.response.data);
-// //     }
-// //     return null;
-// //   }
-// // }
 // async function getScoresFromNewSheet(clientEmail) {
 //   try {
 //     const authClient = await auth.getClient();
@@ -1101,7 +1040,49 @@
 //     res.status(500).json({ error: 'Failed to refresh token' });
 //   }
 // });
+// // Send form to client
+// app.post('/api/clients/send-form', authenticateToken, async (req, res) => {
+//   try {
+//     if (req.user.role !== 'user') {
+//       return res.status(403).json({ error: 'User access required' });
+//     }
 
+//     const { clientId } = req.body;
+    
+//     const client = await Client.findOne({ 
+//       _id: clientId, 
+//       createdBy: req.user.userId 
+//     });
+    
+//     if (!client) {
+//       return res.status(404).json({ error: 'Client not found' });
+//     }
+
+//     // Send email to client with the form link
+//     const emailSubject = 'Please complete your handwriting analysis questionnaire';
+//     const emailHtml = `
+//       <p>Dear ${client.name},</p>
+//       <p>Please complete the following questionnaire as part of your handwriting analysis:</p>
+//       <a href="${client.googleFormLink}" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Click here to complete the questionnaire</a>
+//       <p><strong>Link:</strong> ${client.googleFormLink}</p>
+//       <p>Thank you!</p>
+//     `;
+    
+//     await sendEmail(client.email, emailSubject, emailHtml);
+    
+//     res.json({ 
+//       message: 'Form sent successfully to client',
+//       client: {
+//         id: client._id,
+//         name: client.name,
+//         email: client.email
+//       }
+//     });
+//   } catch (err) {
+//     console.error('Error sending form:', err);
+//     res.status(500).json({ error: 'Failed to send form to client' });
+//   }
+// });
 // // //////////////////////////////////////////////////////////////////////////////////////////////
 
 // const PORT = process.env.PORT || 5000;
@@ -1124,7 +1105,7 @@ app.use(express.json());
 app.use(cors());
 
 // MongoDB Connection
-const mongoURI = 'mongodb+srv://01fe22bcs259:Sagar@cluster0.v0jo1.mongodb.net/handwritting';
+const mongoURI = process.env.MONGO_URI;
 mongoose.connect(mongoURI)
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.error('MongoDB connection error:', err));
@@ -1134,7 +1115,7 @@ const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'grapho.genius@gmail.com',
-    pass: 'gnzt pxuk uzyr klzj',
+    pass: process.env.EMAIL_PWD,
   }
 });
 
@@ -1566,16 +1547,7 @@ const Client = mongoose.model('Client', clientSchema);
 const { google } = require('googleapis');
 const sheets = google.sheets('v4');
 
-// Initialize auth with service account credentials
-// const auth = new google.auth.GoogleAuth({
-//   keyFile: 'googleSheetsAPI.json', // Your downloaded JSON file
-//   scopes: ['https://www.googleapis.com/auth/spreadsheets'],
-// });
 
-// const auth = new google.auth.GoogleAuth({
-//   keyFile: '/etc/secrets/googleSheetsAPI.json',
-//   scopes: ['https://www.googleapis.com/auth/spreadsheets'],
-// });
 const auth = new google.auth.GoogleAuth({
   credentials: {
     type: process.env.GOOGLE_TYPE,
@@ -1592,11 +1564,10 @@ const auth = new google.auth.GoogleAuth({
   },
   scopes: ['https://www.googleapis.com/auth/spreadsheets'],
 });
-
 async function getScoresFromNewSheet(clientEmail) {
   try {
     const authClient = await auth.getClient();
-    const spreadsheetId = '1oYSj9bU3b5g-CzSCESbg8RAvuzj0dhXHdODRl_GhSno';
+    const spreadsheetId = process.env.SPREDSHEET_ID;
     
     // First, list all available sheets
     const spreadsheet = await sheets.spreadsheets.get({
@@ -2142,49 +2113,7 @@ app.post('/api/refresh-token', authenticateToken, async (req, res) => {
     res.status(500).json({ error: 'Failed to refresh token' });
   }
 });
-// Send form to client
-app.post('/api/clients/send-form', authenticateToken, async (req, res) => {
-  try {
-    if (req.user.role !== 'user') {
-      return res.status(403).json({ error: 'User access required' });
-    }
 
-    const { clientId } = req.body;
-    
-    const client = await Client.findOne({ 
-      _id: clientId, 
-      createdBy: req.user.userId 
-    });
-    
-    if (!client) {
-      return res.status(404).json({ error: 'Client not found' });
-    }
-
-    // Send email to client with the form link
-    const emailSubject = 'Please complete your handwriting analysis questionnaire';
-    const emailHtml = `
-      <p>Dear ${client.name},</p>
-      <p>Please complete the following questionnaire as part of your handwriting analysis:</p>
-      <a href="${client.googleFormLink}" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Click here to complete the questionnaire</a>
-      <p><strong>Link:</strong> ${client.googleFormLink}</p>
-      <p>Thank you!</p>
-    `;
-    
-    await sendEmail(client.email, emailSubject, emailHtml);
-    
-    res.json({ 
-      message: 'Form sent successfully to client',
-      client: {
-        id: client._id,
-        name: client.name,
-        email: client.email
-      }
-    });
-  } catch (err) {
-    console.error('Error sending form:', err);
-    res.status(500).json({ error: 'Failed to send form to client' });
-  }
-});
 // //////////////////////////////////////////////////////////////////////////////////////////////
 
 const PORT = process.env.PORT || 5000;
